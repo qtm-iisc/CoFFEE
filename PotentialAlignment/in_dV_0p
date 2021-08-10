@@ -1,0 +1,8 @@
+&dV_mD
+file_type = cube 
+file_pristine = V_p.cube 
+file_neutral = V_0.cube 
+charge = -2
+plt_dir = a1 
+factor = Ryd
+/

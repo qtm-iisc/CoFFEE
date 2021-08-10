@@ -1,0 +1,4 @@
+ps3d.pyx contains the Cython code
+
+Cythonize and generate .so using:
+python3 setup.py build_ext --inplace

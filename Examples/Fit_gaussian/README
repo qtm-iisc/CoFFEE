@@ -1,0 +1,19 @@
+The script g_fit.py fits a Gaussian to the wavefunction 
+charge density provided in cube/xsf format.
+
+The output of the script is the width of the 
+model Gaussian which can be used to determine the 
+Sigma parameter input to the model calculations using
+coffee.py. The script also plots the planar averaged data 
+and the Gaussian fit to it. 
+
+To run this example run the following:
+$python3 ../../GaussianFit/g_fit.py in
+
+
+The script reads input from a file. The input file 
+has just three parameters:
+
+file_name = wfn.cube # Name of the cube/xsf file.
+file_type = cube # Type of the file: cube/xsf.
+plt_dir = a3 # Direction to plot and visualize the fit.

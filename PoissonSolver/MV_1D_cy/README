@@ -1,0 +1,11 @@
+matvec.pyx contains the Cython code
+
+Cythonize and generate matvec.so using:
+python setup.py build_ext --inplace
+
+
+Possible issue in Mac OS:
+"fatal error: 'numpy/arrayobject.h' file not found"
+
+Fix:
+export CFLAGS="-I /usr/local/lib/python3.9/site-packages/numpy/core/include $CFLAGS"

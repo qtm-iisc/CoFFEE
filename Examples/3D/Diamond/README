@@ -1,0 +1,35 @@
+Welcome to the Diamond test system.
+
+This example studies a C vacancy in Diamond in the -2 charge
+state. The complete electrostatic correction for this system 
+involves computing the following terms 
+(see Eqn 2, Eqn 3 and Eqn 4 in CoFFEE paper):
+
+1. Lattice correction term: E^{lat}, obtained from the
+   model calculations.
+   The details on computing E^{lat} are provided in 
+   the folder Model_Scaling/
+2. Potential alignment term: -\Delta V_{q/0}, Eqn 5
+   in the paper.
+   The details on computing this term are provided in 
+   the folder PA_q0/
+3. Potential alignment term: -q\Delta V_{0/p}, Eqn 2
+   in the paper.
+   The details on computing this term are provided in
+   the folder PA_0p/
+
+Complete correction for the 4x4x4 super cell,
+E_corr = E^{lat} + (-\Delta V_{q/0}) + (-q\Delta V_{0/p})
+E_corr = 0.97 + 0.0 + 0.1 eV 
+E_corr = 1.07 eV
+
+
+For the 4x4x4 super cell:
+Uncorrected formation energy: 13.189 eV
+Corrected formation energy: 14.259 eV
+
+The QE_input/ directory provides the 
+Quantum Espresso input file for the 4x4x4
+super cell calculation with a C 
+vacancy in the -2 charged state.
+We also provide the carbon pseudopotential.

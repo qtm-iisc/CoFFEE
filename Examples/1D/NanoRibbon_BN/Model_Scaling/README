@@ -1,0 +1,72 @@
+This folder computes E^{lat} for a B vacancy in 
+a BN nanoribbon in the -1 charge state.
+
+The lattice correction term, E^{lat}, is given by 
+(Eqn. 4 in the CoFFEE paper):
+E^{lat} = E^{iso,m}- E^{per,m}
+
+To obtain the isolated model energy for this system, 
+the model periodic energy is computed for several supercell sizes.
+These values are then fit with a third order polynomial as 
+shown in Fig. 8 (e) in the CoFFEE paper. This polynomial 
+has the form:
+p(\alpha) = f_0 + f_1/\alpha + f_2/\alpha^2 + f_3/\alpha^3
+ 
+where \alpha denotes the supercell dimension: 
+\alpha x 2.31\alpha x \alpha.
+The polynomial extrapolation, 1/\alpha -> 0, gives 
+the E^{iso,m}.
+The lattice parameter is 4.74 bohr. The cell 
+dimensions for \alpha = 6 are:
+28.44, 65.6964 and 28.44 along x, y and z 
+directions respectively.
+
+Note that computing this term for large supercell sizes 
+can be time consuming. The users can make use of the 
+MPI parallelization of this code.
+
+We provide the sample input files for the 
+various supercell sizes in folders alpha.*. 
+To understand how this example works, the model 
+energy can be computed for a few small supercell sizes. 
+We provide the results for the larger supercell sizes and 
+a script to plot the polynomial.
+
+To run this example, perform the following steps:
+1. Go to the folders alpha.6 and run the following command:
+python3 path_to_coffee_folder/coffee.py in > out
+2. Go to the folders alpha.8 and run the following command:
+python3 path_to_coffee_folder/coffee.py in > out
+3. Go to the folders alpha.10 and run the following command:
+python3 path_to_coffee_folder/coffee.py in > out
+
+(Feel free to run the other supercell sizes as well)
+To run the code in parallel:
+mpirun -np 12 python3 your_path_to_CoFFEE/coffee.py in > out
+
+The model total energy is printed in the out files.
+The following command will show this energy:
+grep ! out
+The dielectric profile, model potential and 
+model charge density are written out in numpy 
+save files. Instruction on how to plot these is provided 
+in the Plot folder within the alpha.* folders
+
+For this example, the model energies should be:
+6x14x6: 1.4569 eV
+8x18.66x8: 1.5899 eV
+10x23.33x10: 1.6507 eV
+
+15x34.99x15: 0.529 eV
+20x46.66x20: 0.588 eV
+30x69.99x30: 0.618 eV
+
+Use plot_fit.py to compute the fifth order polynomial fit 
+and extrapolation to obtain E^{iso,m} for these values.
+E^{iso,m} is computed to be 1.88 eV
+
+The corrections, are then given by: 
+(E^{iso,m}- E^{per,m}) 
+6x14x6: 0.423 eV
+8x18.66x8: 0.291 eV
+10x23.33x10: 0.229 eV

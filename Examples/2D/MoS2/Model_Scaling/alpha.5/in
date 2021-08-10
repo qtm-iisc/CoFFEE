@@ -1,0 +1,33 @@
+&CELL_PARAMETERS
+
+Lattice_Vectors(normalized):
+0.500000 -0.8660254037844386 0.0000000
+0.500000 0.8660254037844386 0.000000
+0.000000 0.000000 1.000000
+
+Cell_dimensions bohr
+29.53 29.53 29.53
+
+Ecut=15.0 Hartree 
+/
+
+&DIELECTRIC_PARAMETERS Slab
+Epsilon1_a1 = 15.0
+Epsilon2_a1 = 1.0
+Epsilon1_a2 = 15.0
+Epsilon2_a2 = 1.0
+Epsilon1_a3 = 2.0
+Epsilon2_a3 = 1.0
+Width = 11.40454 bohr
+Centre = 5.70226 bohr
+Smoothness = 0.37807 bohr
+Plot_eps = True
+/
+
+&GAUSSIAN_PARAMETERS:
+Total_charge = -1
+Sigma = 1.89035
+Centre_a1 = 0.5
+Centre_a2 = 0.5
+Centre_a3 = 0.1931175
+/

@@ -1,0 +1,7 @@
+&plavg
+file_name = rho_r.npy
+file_type = python
+plt_dir = a3
+factor = 1.0
+cell_dim = 37.92
+/

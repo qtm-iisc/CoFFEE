@@ -1,0 +1,71 @@
+This folder computes E^{lat} for a S vacancy in 
+monolayer MoS2 in the -1 charge state.
+
+The lattice correction term, E^{lat}, is given by 
+(Eqn. 3 in the CoFFEE paper):
+E^{lat} = E^{iso,m}- E^{per,m}
+
+To obtain the isolated model energy for this system, 
+the model periodic energy is computed for several supercell sizes.
+These values are then fit with a fifth order polynomial as 
+shown in Fig. 6 (c) in the CoFFEE paper. This polynomial 
+has the form:
+p(\alpha) = f_0 + f_1/\alpha + f_2/\alpha^2 + f_3/\alpha^3 + 
+            f_4/\alpha^4 + f_5/\alpha^5
+where \alpha denotes the supercell dimension: \alpha x \alpha x \alpha.
+The polynomial extrapolation, 1/\alpha -> 0, gives 
+the E^{iso,m}.
+
+Note that computing this term for large supercell sizes 
+can be time consuming. The users can make use of the 
+MPI parallelization of this code. To run in 
+parallel, prepend with the mpirun command.
+
+We provide the sample input files for the 
+various supercell sizes in folders alpha.*. 
+To understand how this example works, the model 
+energy can be computed for a few small supercell sizes. 
+We provide the results for the larger supercell sizes and 
+a script to plot the polynomial.
+
+To run this example, perform the following steps:
+1. Go to the folders alpha.4 and run the following command:
+path_to_coffee_folder/coffee.py in > out
+2. Go to the folders alpha.5 and run the following command:
+path_to_coffee_folder/coffee.py in > out
+3. Go to the folders alpha.6 and run the following command:
+path_to_coffee_folder/coffee.py in > out
+4. Go to the folders alpha.8 and run the following command:
+path_to_coffee_folder/coffee.py in > out
+
+(Feel free to run the other supercell sizes as well)
+
+The model total energy is printed in the out files.
+The following command will show this energy:
+grep ! out
+The dielectric profile, model potential and 
+model charge density are written out in numpy 
+save files. Instruction on how to plot these is provided 
+in the Plot folder within the alpha.* folders
+
+For this example, the model energies should be:
+4x4x4: 0.421 eV
+5x5x5: 0.463 eV
+6x6x6: 0.488 eV
+8x8x8: 0.516 eV
+
+10x10x10: 0.529 eV
+20x20x20: 0.558 eV 
+40x40x40: 0.588 eV
+80x80x80: 0.618 eV
+
+Use plot_fit.py to compute the fifth order polynomial fit 
+and extrapolation to obtain E^{iso,m} for these values.
+E^{iso,m} is computed to be 0.66 eV
+
+The corrections, are then given by: 
+(E^{iso,m}- E^{per,m}) 
+4x4x4: 0.239 eV
+5x5x5: 0.197 eV
+6x6x6: 0.172 eV
+8x8x8: 0.144 eV

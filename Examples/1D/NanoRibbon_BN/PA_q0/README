@@ -1,0 +1,34 @@
+This folder shows you how to compute the 
+potential alignment term, \Delta V_{q-0/m} (Eqn. 6
+in the CoFFEE paper)
+
+It involves comparing the planar averaged DFT difference 
+potential between the charged and neutral cells, 
+(V_q^{DFT} - V_0^{DFT}) with the model potential for the 
+same super cell, far from the defect position. 
+
+Complete details on the DFT calculations are
+provided in the paper. 
+We provide the planar averaged V_q^{DFT} and V_0^{DFT}
+potentials computed using Quantum Espresso for the 6x6x6
+super cell in the files:
+plavg_q_a1.plot and plavg_0_a1.plot
+These can be generated from your DFT calculation by 
+writing the DFT potentials into a cube/xsf format. 
+The cube/xsf file can then be planar averaged using 
+the utility plavg.py, located in the path:
+path_to_CoFFEE_folder/PotentialAlignment/Utilities/
+The details on how to run this script is provided in 
+the same folder.
+
+We compare the DFT difference potential with the 
+model potential (far from the defect) computed 
+in the folder: ../Model_Scaling/alpha.6/Plot/ using 
+the script plot_DVq0.py. 
+
+You will find that the difference between the potentials, 
+far from the defect is negligibly small. There is hence 
+no contribution from this term to the correction. It 
+is however necessary to always check if this is true. 
+This term being small indicates that the charged defect has been 
+modelled well. 

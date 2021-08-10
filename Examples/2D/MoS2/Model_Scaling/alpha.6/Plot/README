@@ -1,0 +1,16 @@
+The planar average of the model potential
+along a given direction can be plotted using in_V.
+Link the V_r.npy file using:
+$ln -s ../V_r.npy .
+
+The planar average of the model charge
+along a given direction can be plotted using input
+in_rho to plavg.py
+Link the rho_r.npy file using:
+$ln -s ../rho_r.npy .
+
+To run plavg.py:
+$your_path_to_CoFFEE/PotentialAlignment/Utilities/plavg.py input
+
+This produces a two column file plavg_(direction).plot which you could
+plot using a software of your choice.

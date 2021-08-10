@@ -1,0 +1,42 @@
+## C vacancy in Diamond in the -2 charge state. 
+
+The lattice correction term, E_lat, is given by 
+(Eqn. 3 in the CoFFEE paper):
+E^{lat} = E^{iso,m}- E^{per,m}
+
+To obtain the isolated model energy, the model periodic energy 
+is computed for three supercell sizes, say 4x4x4, 5x5x5 and 
+6x6x6 for this case. These energies are fitted with a polynomial, 
+of the form Eqn 13 in CoFFEE paper, 
+p(\Omega) = f_1 + f_2/(\Omega^(1/3)) + f_3/(\Omega),
+and extrapolated to infinity to obtain E_m,iso. 
+See also Fig 4 (c) for the fit. 
+
+Note: Extrapolation is dependent on the Sigma used in the calculation!
+
+To run this example, perform the following steps:
+1. Go to the folder 4x4x4/ and run the following command:
+python3 path_to_coffee_folder/coffee.py in > out
+2. Go to the folder 5x5x5/ and run the following command:
+python3 path_to_coffee_folder/coffee.py in > out
+3. Go to the folder 6x6x6/ and run the following command:
+python3 path_to_coffee_folder/coffee.py in > out
+
+The model total energy is printed in the out files.
+The following command will show this energy:
+grep ! out
+
+For this example, the model energies should be:
+4x4x4: 1.0744 eV
+5x5x5: 1.2549 eV
+6x6x6: 1.3800 eV
+
+Use plot_fit.py to compute the polynomial fit and extrapolation
+to obtain E^{iso,m} for these values.
+E^{iso,m} is computed to be 2.04 eV
+
+The corrections, for these super cells then are:
+(E^{iso,m}- E^{per,m})
+4x4x4: 0.97
+5x5x5: 0.785
+6x6x6: 0.66

@@ -1,0 +1,26 @@
+This folder shows you how to compute the 
+potential alignment term, \Delta V_{0/p} (Eqn. 2 
+in the CoFFEE paper)
+
+It involves comparing the planar averaged DFT 
+potentials between the neutral and pristine cells, 
+-q(V_0 - V_p), far from the defect site. 
+
+Complete details on the DFT calculations are
+provided in the paper. 
+We provide the planar averaged V_p and V_0
+potentials computed using Quantum Espresso for the 6x6x6
+super cell in the files:
+plavg_p_a3.plot and plavg_0_a3.plot
+These can be generated from your DFT calculation by 
+writing the DFT potentials into a cube/xsf format. 
+The cube/xsf file can then be planar averaged using 
+the utility plavg.py, located in the path:
+path_to_CoFFEE_folder/PotentialAlignment/Utilities/
+The details on how to run this script is provided in 
+the same folder.
+
+Use the script plot_DV0p.py to plot this difference
+and find the value far from the defect site.
+
+This term is small as well, about 0.04 eV

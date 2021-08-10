@@ -1,0 +1,17 @@
+This example shows how to construct a
+dielectric profile for a wire with a 
+hexagonal cross-section. Periodicity 
+assumed in the z direction.
+The edges of the nanowire are read 
+from the vertices file supplied in the input. 
+
+Run coffee.py with the given input file, in, 
+and visualize the epsilon profile using 
+plot_eps.py:
+
+$path_to_coffee_folder/coffee.py in
+$python plot_eps.py
+
+Note that this is a fictitious system 
+to demonstrate how the profile can
+be constructed.

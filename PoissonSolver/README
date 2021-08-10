@@ -1,0 +1,20 @@
+This folder contains four scripts: classes.py, Solver.py,
+PS_main.py and construct_eps.py
+
+
+classes.py defines the classes: cell, diel_profile and gaussian. 
+The parameters in the CELL_PARAMETERS section are attributes of the 
+cell class, the parameters in the DIELECTRIC_PARAMETERS section are 
+attributes of the diel_profile class and those of the 
+GAUSSIAN_PARAMETERS section are attributes of the gaussian class. 
+The classes have a number of functions, which read their 
+respective sections of the input file, construct the profiles, etc.
+
+Solver.py chooses the solver based on the dielectric profile
+
+PS_main.py contains the Poisson solvers for the 1D, 2D and 3D 
+systems. The matvecs are Cythonized. The Cython code for each 
+is provided in the directories: MV_1D_cy, MV_2D_cy and MV_3D_cy
+
+construct_eps.py constructs the epsilon profile in real space,
+writes to file and Fourier transforms it. 

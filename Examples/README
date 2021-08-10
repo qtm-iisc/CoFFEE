@@ -1,0 +1,17 @@
+You can find examples for 1D, 2D and 3D systems here:
+
+1D - BN nanoribbon, B vacancy in charge state -1.
+
+2D - monolayer of MoS2 with S vacancy, in charge state -1
+
+3D - Diamond with a C vacancy in charge state -2.
+
+The complete results for these systems can be found in the 
+paper. 
+
+Each directory shows how to perform the corrections on one
+super cell of the respective system. 
+
+Fit_gaussian/ directory shows how to fit a Gaussian to
+a given cube/xsf file holding the defect wavefunction 
+charge density.

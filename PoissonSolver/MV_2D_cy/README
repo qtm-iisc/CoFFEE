@@ -1,0 +1,4 @@
+matvec2D.pyx contains the Cython code
+
+Cythonize and generate matvec.so using:
+python3 setup.py build_ext --inplace

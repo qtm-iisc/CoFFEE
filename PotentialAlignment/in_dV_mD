@@ -1,0 +1,8 @@
+&dV_mD
+file_type = cube
+file_model =  V_r.npy
+file_charged = V_q.cube
+file_neutral = V_0.cube
+plt_dir = a1
+factor = Ryd
+/

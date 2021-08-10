@@ -1,0 +1,34 @@
+&CELL_PARAMETERS
+
+Lattice_Vectors(normalized):
+1.0 0.0 0.0
+0.0 1.0 0.0
+0.0 0.0 1.0
+
+Cell_dimensions bohr
+37.794323292641444 88.48 37.92
+
+Ecut=8.0 Hartree 
+/
+
+&DIELECTRIC_PARAMETERS Ribbon
+C_x = 18.897161646320722 bohr
+Gauss_amp_a1 = 2.94
+Gauss_amp_a2 = 12.0
+Gauss_amp_a3 = 12.0
+Sigma = 0.85868842
+Gauss_along_x = True
+Gauss_along_y = False
+C_y = 17.96054782
+W_y = 26.01508
+Smoothness = 0.37 bohr
+Plot_eps = True
+/
+
+&GAUSSIAN_PARAMETERS:
+Total_charge = -1
+Sigma = 1.89034
+Centre_a1 = 0.5
+Centre_a2 = 0.18515153030823003
+Centre_a3 = 0.5
+/
