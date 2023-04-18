@@ -88,9 +88,9 @@ def pl_avg_a1(vol,a1_dim,a2_dim,a3_dim,step_l,factor):
     vol_a1[i] = Sum1/(a2_dim*a3_dim)
     A1.append(i*step_l)
   if factor == "Ryd":
-    vol_a1 = vol_a2*rydberg
+    vol_a1 = vol_a1*rydberg
   elif factor == "Hartree":
-    vol_a1 = vol_a2*hartree
+    vol_a1 = vol_a1*hartree
   return vol_a1,np.array(A1)
 
 def pl_avg_a2(vol,a1_dim,a2_dim,a3_dim,step_l,factor):
